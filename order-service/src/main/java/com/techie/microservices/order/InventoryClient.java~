@@ -1,2 +1,0 @@
-package com.techie.microservices.order;public interface InventoryClient {
-}
