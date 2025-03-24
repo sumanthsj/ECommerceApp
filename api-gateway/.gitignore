@@ -7,6 +7,7 @@ target/
 **/data/
 **/out/
 *~
+**/volume-data/
 
 ### STS ###
 .apt_generated
