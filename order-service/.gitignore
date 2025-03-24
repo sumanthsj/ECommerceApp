@@ -6,6 +6,8 @@ target/
 
 **/data/
 **/out/
+*~
+
 
 ### STS ###
 .apt_generated
