@@ -23,16 +23,18 @@ public class NotificationService {
         MimeMessagePreparator messagePreparator = mimeMessage -> {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
             messageHelper.setFrom("no-reply@demomailtrap.co");
-            messageHelper.setTo(orderPlacedEvent.getEmail());
+            messageHelper.setTo(orderPlacedEvent.getEmail().toString());
             messageHelper.setSubject(String.format("Your Order with OrderNumber %s is placed successfully", orderPlacedEvent.getOrderNumber()));
             messageHelper.setText(String.format("""
-                            Hi
+                            Hi  %s, %s
 
                             Your order with order number %s is now placed successfully.
 
                             Best Regards
                             Spring Shop
                             """,
+                    orderPlacedEvent.getFirstName(),
+                    orderPlacedEvent.getLastName(),
                     orderPlacedEvent.getOrderNumber()));
         };
         try {
